@@ -1,0 +1,58 @@
+{
+  "name": "roommate.js",
+  "version": "1.0.0",
+  "private": true,
+  "description": "backend to control your home services",
+  "scripts": {
+    "prestart": "babel ./src --out-dir build",
+    "start": "node ./build/bin/www",
+    "startdev": "nodemon --exec babel-node ./src/bin/www",
+    "test": "nyc --reporter=html --reporter=text --reporter=lcov mocha -r @babel/register",
+    "lint": "./node_modules/.bin/eslint ./src",
+    "pretty": "prettier --write '**/*.{js,json}' '!node_modules/**'",
+    "postpretty": "npm run lint --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fjavidcr/roommate.js.git"
+  },
+  "keywords": [
+    "express",
+    "backend",
+    "home"
+  ],
+  "author": "javicastillo92@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fjavidcr/roommate.js/issues"
+  },
+  "homepage": "https://github.com/fjavidcr/roommate.js#readme",
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^10.0.0",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/node": "^7.14.9",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/register": "^7.14.5",
+    "@babel/runtime": "^7.14.8",
+    "chai": "^4.3.4",
+    "coveralls": "^3.1.1",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "mocha": "^9.0.3",
+    "nodemon": "^2.0.12",
+    "nyc": "^15.1.0",
+    "prettier": "^2.3.2",
+    "sinon-chai": "^3.7.0",
+    "supertest": "^6.1.4"
+  }
+}
